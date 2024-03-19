@@ -1,0 +1,20 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+install! 'cocoapods',
+  disable_input_output_paths: true,
+  generate_multiple_pod_projects: true
+
+source 'https://cdn.cocoapods.org'
+
+target 'HLLSafetyAirBag_Example' do
+  pod 'HLLSafetyAirBag', :path => '../'
+  pod 'Masonry'
+  pod 'MBProgressHUD'
+  pod 'Bugly'
+
+  target 'HLLSafetyAirBag_Tests' do
+    inherit! :search_paths
+  end
+end
